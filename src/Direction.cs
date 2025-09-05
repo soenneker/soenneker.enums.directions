@@ -1,10 +1,12 @@
 ﻿using Intellenum;
+using Soenneker.Attributes.PublicOpenApiObject;
 
 namespace Soenneker.Enums.Directions;
 
 /// <summary>
 /// An enumeration for directions
 /// </summary>
+[PublicOpenApiObject]
 [Intellenum<string>]
 public partial class Direction
 {
