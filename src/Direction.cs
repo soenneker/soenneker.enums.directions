@@ -8,7 +8,7 @@ namespace Soenneker.Enums.Directions;
 /// </summary>
 [PublicOpenApiObject]
 [Intellenum<string>]
-public partial class Direction
+public sealed partial class Direction
 {
     public static readonly Direction Incoming = new(nameof(Incoming));
 
