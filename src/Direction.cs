@@ -1,4 +1,4 @@
-﻿using Intellenum;
+using Soenneker.Gen.EnumValues;
 using Soenneker.Attributes.PublicOpenApiObject;
 
 namespace Soenneker.Enums.Directions;
@@ -7,7 +7,7 @@ namespace Soenneker.Enums.Directions;
 /// An enumeration for directions
 /// </summary>
 [PublicOpenApiObject]
-[Intellenum<string>]
+[EnumValue<string>]
 public sealed partial class Direction
 {
     public static readonly Direction Incoming = new(nameof(Incoming));
