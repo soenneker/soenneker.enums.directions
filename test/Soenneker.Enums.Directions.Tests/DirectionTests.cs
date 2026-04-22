@@ -1,10 +1,9 @@
-﻿using Xunit;
 
 namespace Soenneker.Enums.Directions.Tests;
 
 public sealed class DirectionTests
 {
-    [Fact]
+    [Test]
     public void Default()
     {
 
