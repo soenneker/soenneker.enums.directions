@@ -10,7 +10,13 @@ namespace Soenneker.Enums.Directions;
 [EnumValue<string>]
 public sealed partial class Direction
 {
+    /// <summary>
+    /// The incoming.
+    /// </summary>
     public static readonly Direction Incoming = new(nameof(Incoming));
 
+    /// <summary>
+    /// The outgoing.
+    /// </summary>
     public static readonly Direction Outgoing = new(nameof(Outgoing));
 }
