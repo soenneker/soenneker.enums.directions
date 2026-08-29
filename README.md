@@ -3,11 +3,23 @@
 [![](https://img.shields.io/nuget/dt/soenneker.enums.directions.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.enums.directions/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.enums.directions/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.enums.directions/actions/workflows/codeql.yml)
 
-# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Enums.Directions
-### An enumeration for directions
+# Soenneker.Enums.Directions
 
-## Installation
+Identifies whether a communication, event, or data flow is inbound or outbound relative to the system.
 
-```
+## Install
+
+```bash
 dotnet add package Soenneker.Enums.Directions
 ```
+
+## What you get
+
+- `Direction` — Identifies whether a communication, event, or data flow is inbound or outbound relative to the system.
+
+## API at a glance
+
+| API | What it does | Result / important behavior |
+| --- | --- | --- |
+| `Direction.Incoming` | The item is received by or entering the system. | The item is received by or entering the system. |
+| `Direction.Outgoing` | The item is sent by or leaving the system. | The item is sent by or leaving the system. |
