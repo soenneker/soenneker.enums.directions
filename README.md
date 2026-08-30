@@ -5,7 +5,7 @@
 
 # Soenneker.Enums.Directions
 
-Identifies whether a communication, event, or data flow is inbound or outbound relative to the system.
+A string-backed enum-value type for marking a communication, event, or data flow as incoming or outgoing.
 
 ## Install
 
@@ -13,13 +13,25 @@ Identifies whether a communication, event, or data flow is inbound or outbound r
 dotnet add package Soenneker.Enums.Directions
 ```
 
-## What you get
+## Usage
 
-- `Direction` — Identifies whether a communication, event, or data flow is inbound or outbound relative to the system.
+```csharp
+using Soenneker.Enums.Directions;
 
-## API at a glance
+Direction direction = Direction.Incoming;
+string wireValue = direction.Value; // "Incoming"
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `Direction.Incoming` | The item is received by or entering the system. | The item is received by or entering the system. |
-| `Direction.Outgoing` | The item is sent by or leaving the system. | The item is sent by or leaving the system. |
+if (Direction.TryFromValue(input, out Direction? parsed))
+{
+    // parsed is Incoming or Outgoing
+}
+```
+
+Available values:
+
+- `Incoming` — entering or received by the system
+- `Outgoing` — leaving or sent by the system
+
+`System.Text.Json` serializes the type as its string value and restores recognized values to the shared static instances. `FromValue` throws for unknown input; use `TryFromValue` when parsing request or provider data. `FromName` and `TryFromName` are also generated.
+
+Direction is always relative to a defined boundary. State that boundary in the surrounding contract—for example, incoming to your application or outgoing from a mailbox—especially when an event passes through multiple systems. The type does not imply delivery status, request/response role, or network traffic direction.
